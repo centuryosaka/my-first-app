@@ -43,7 +43,7 @@ git push origin <ブランチ名>
 
 ## デプロイ情報
 
-- 本番URL： https://my-first-app-three-eta.vercel.app/login
+- 本番URL： https://my-first-app-three-eta.vercel.app
 - Supabase プロジェクト名：realestate-app
 
 ## コーディング規約
