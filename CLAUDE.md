@@ -41,6 +41,11 @@ git push origin <ブランチ名>
 - `.env` や認証情報をコミットしない
 - `--no-verify` でフックをスキップしない
 
+## デプロイ情報
+
+- 本番URL： https://my-first-app-three-eta.vercel.app/login
+- Supabase プロジェクト名：realestate-app
+
 ## コーディング規約
 
 （ここに使用言語・フレームワークに応じた規約を追記してください）
