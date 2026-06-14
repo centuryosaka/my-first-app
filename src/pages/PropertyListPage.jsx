@@ -28,7 +28,14 @@ export default function PropertyListPage() {
       const data = await fetchProperties()
       setProperties(data)
     } catch (err) {
-      setError('物件の取得に失敗しました。ページを再読み込みしてください。')
+      // Supabase のエラーコードと内容を表示して原因を特定しやすくする
+      const code = err?.code ?? ''
+      const msg  = err?.message ?? String(err)
+      if (code === 'PGRST205' || msg.includes("table 'public.properties'")) {
+        setError('【セットアップ未完了】Supabase に properties テーブルが存在しません。supabase/schema.sql を Supabase の SQL Editor で実行してください。')
+      } else {
+        setError(`データ取得エラー (${code || 'unknown'}): ${msg}`)
+      }
     } finally {
       setLoading(false)
     }
